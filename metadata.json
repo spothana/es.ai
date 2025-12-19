@@ -1,0 +1,8 @@
+{
+  "name": "EmbeddedSystems.ai Portfolio",
+  "description": "A high-end professional portfolio for an expert in intelligent embedded systems, featuring project deep-dives, skill visualizations, and an AI technical assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
