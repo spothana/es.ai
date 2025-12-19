@@ -1,50 +1,36 @@
 
 # embeddedsystems.ai
 
-Professional Portfolio of a Senior Embedded Systems Expert.
+Professional Portfolio of a Embedded Systems Expert.
 
 ## 🚀 GitHub Check-in
-1. **Initialize Git**:
+1. **Initialize & Commit**:
    ```bash
    git init
    git add .
-   git commit -m "Initial commit: Production-ready portfolio for embeddedsystems.ai"
+   git commit -m "feat: initial production-ready portfolio"
    ```
-2. **Create Repo on GitHub**: Go to [github.com/new](https://github.com/new) and create a repository.
-3. **Push to GitHub**:
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/embeddedsystems.ai.git
-   git branch -M main
-   git push -u origin main
-   ```
+2. **Push to Remote**:
+   * Create a repo at `github.com/new`.
+   * Follow the "push an existing repository" commands provided by GitHub.
 
-## 🌐 GCP Deployment (via Firebase Hosting)
-*Firebase Hosting is the recommended GCP sub-service for static web apps with custom domains.*
-
-1. **Install Firebase CLI**:
-   ```bash
-   npm install -g firebase-tools
-   ```
-2. **Login and Init**:
-   ```bash
-   firebase login
-   firebase init
-   ```
-   *   Select **Hosting**.
-   *   Choose/Create a GCP Project.
-   *   Set public directory to `dist` (if building) or current directory if using direct ESM.
-3. **Deploy**:
+## 🌐 GCP / Firebase Deployment
+1. **Finish the CLI**: 
+   * **Project ID**: `embeddedsystems-ai-prod`
+   * **Public Directory**: `.`
+   * **Single Page App**: `Yes`
+   * **GitHub Action**: `Yes` (This will automate your deployments every time you push to GitHub).
+2. **Deploy**:
    ```bash
    firebase deploy
    ```
-4. **Custom Domain**:
-   *   Go to Firebase Console -> Hosting -> **Add Custom Domain**.
-   *   Enter `embeddedsystems.ai`.
-   *   Update GoDaddy DNS settings with the provided TXT/A records.
+3. **Domain Mapping**: 
+   * In Firebase Console, go to **Hosting > Add Custom Domain**.
+   * Enter `embeddedsystems.ai` and copy the A Records.
+   * Log into **GoDaddy**, go to DNS Management for your domain, and update the A records.
 
 ## 🛠 Tech Stack
-- **Frontend**: Vue.js 3 (ESM Browser Build)
-- **Styling**: Tailwind CSS
-- **AI Integration**: Google Gemini API (@google/genai)
-- **Icons**: Heroicons (SVG)
-- **Deployment**: GCP / Firebase
+- **Framework**: Vue 3 (Reactive Composition API)
+- **Engine**: Google Gemini AI (@google/genai)
+- **Styles**: Tailwind CSS
+- **Hosting**: GCP / Firebase Hosting
