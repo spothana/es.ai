@@ -1,7 +1,7 @@
 
 import { defineComponent, ref, nextTick, watch } from 'vue';
-import { getTechnicalExplanation } from '../services/geminiService';
-import { ChatMessage } from '../types';
+import { getTechnicalExplanation } from '../services/geminiService.ts';
+import { ChatMessage } from '../types.ts';
 
 export default defineComponent({
   name: 'GeminiAssistant',

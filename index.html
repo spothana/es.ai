@@ -31,6 +31,7 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #334155;
       }
+      [v-cloak] { display: none; }
     </style>
     <script type="importmap">
     {
@@ -43,7 +44,15 @@
   <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="min-h-screen flex items-center justify-center bg-slate-950 font-mono text-cyan-500">
+        <div class="flex flex-col items-center gap-4">
+          <div class="w-12 h-12 border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin"></div>
+          <p class="animate-pulse">// system_boot_sequence_active...</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./index.tsx"></script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

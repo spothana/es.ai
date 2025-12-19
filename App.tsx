@@ -1,10 +1,10 @@
 
 import { defineComponent, ref, computed } from 'vue';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import ProjectCard from './components/ProjectCard';
-import GeminiAssistant from './components/GeminiAssistant';
-import { PROJECTS, Icons, SUMMARY_TEXT, COMPETENCIES, EXPERIENCE, PATENTS, EDUCATION } from './constants';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import ProjectCard from './components/ProjectCard.tsx';
+import GeminiAssistant from './components/GeminiAssistant.tsx';
+import { PROJECTS, Icons, SUMMARY_TEXT, COMPETENCIES, EXPERIENCE, PATENTS, EDUCATION } from './constants.tsx';
 
 export default defineComponent({
   name: 'App',

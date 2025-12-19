@@ -1,20 +1,14 @@
 
 import { GoogleGenAI } from "@google/genai";
-import { ChatMessage } from "../types";
-
-const getApiKey = () => {
-  try {
-    return process.env.API_KEY || '';
-  } catch (e) {
-    return '';
-  }
-};
-
-const ai = new GoogleGenAI({ apiKey: getApiKey() });
+import { ChatMessage } from "../types.ts";
 
 export const getTechnicalExplanation = async (userPrompt: string, history: ChatMessage[]): Promise<string> => {
-  const apiKey = getApiKey();
-  if (!apiKey) return "Assistant is initializing...";
+  // Use the API key directly from the environment as required
+  const apiKey = process.env.API_KEY;
+  if (!apiKey) return "Assistant is initializing (API Key missing)...";
+
+  // Create a new instance right before the call to ensure fresh configuration
+  const ai = new GoogleGenAI({ apiKey });
 
   try {
     const context = history.map(m => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.text}`).join('\n');
@@ -39,6 +33,7 @@ export const getTechnicalExplanation = async (userPrompt: string, history: ChatM
       },
     });
 
+    // Directly access the .text property as per GenerateContentResponse guidelines
     return response.text || "I'm sorry, I couldn't process that technical query.";
   } catch (error) {
     console.error("Gemini API Error:", error);
