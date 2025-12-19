@@ -14,9 +14,21 @@
         font-family: 'Inter', sans-serif;
         background-color: #020617;
         color: #f8fafc;
+        background-image: 
+          linear-gradient(to right, #1e293b 1px, transparent 1px),
+          linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+        background-size: 40px 40px;
+        background-attachment: fixed;
       }
       .font-mono {
         font-family: 'JetBrains+Mono', monospace;
+      }
+      .grid-overlay {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at 50% 50%, transparent 0%, #020617 80%);
+        pointer-events: none;
+        z-index: 1;
       }
       ::-webkit-scrollbar {
         width: 8px;
@@ -44,15 +56,16 @@
   <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root">
-      <div class="min-h-screen flex items-center justify-center bg-slate-950 font-mono text-cyan-500">
+    <div class="grid-overlay"></div>
+    <div id="root" class="relative z-10">
+      <div class="min-h-screen flex items-center justify-center bg-slate-950/50 font-mono text-cyan-500">
         <div class="flex flex-col items-center gap-4">
           <div class="w-12 h-12 border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin"></div>
-          <p class="animate-pulse">// system_boot_sequence_active...</p>
+          <p class="animate-pulse text-sm font-bold tracking-widest uppercase">// system_boot_sequence_active...</p>
         </div>
       </div>
     </div>
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="./index.js"></script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
