@@ -6,64 +6,118 @@ export const COMPETENCIES = [
   { category: 'Embedded Linux & RTOS', skills: 'Zephyr, Board bring-up, Bootloader, Kernel porting, Device Drivers, HAL, Application Dev' },
   { category: 'CPU Architectures', skills: 'RISC-V, ARM32/64, MIPS 32' },
   { category: 'Networking', skills: 'MQTT, HTTPS, TCP/IP, Socket programming, Routing & Switching, DHCP' },
-  { category: 'Multimedia/Wireless', skills: 'MPEG2TS, Wi-Fi 6/7, LTE-M, NB-IoT, BLE, Audio/Video decoding, HDMI/HDCP' },
+  { category: 'Multimedia/Wireless', skills: 'MPEG2TS, Wi-Fi 6/7 (802.11ax/be), LTE-M, NB-IoT, BLE, Audio/Video decoding, HDMI/HDCP' },
   { category: 'Modern Tech Stack', skills: 'Vue.js, .NET Core, C, C++, C#, Python, MongoDB, PostGreSQL' }
 ];
 
 export const PATENTS = [
-  { id: 'US 9282373', type: 'Granted', title: 'Managing Time Shift & Permanent Recordings', impact: 'Widely adopted in STBs and streaming devices.' },
-  { id: 'US 8,633,940', type: 'Granted', title: 'Texture Compression in AVC Decoders', impact: 'Optimized 3D graphics engines.' },
-  { id: 'US 7,289,823', type: 'Granted', title: 'Video Overlay Buffer Mirroring', impact: 'Processor resource sharing in feature phones.' },
-  { id: 'US 18/790,443', type: 'Pending', title: 'ML-based Ad Analytics for STBs', impact: 'Innovation in wireless router analytics (2024).' }
+  { 
+    id: 'US 9,282,373', 
+    type: 'Granted', 
+    title: 'Managing Timeshift and Permanent Recording', 
+    impact: 'Core architecture for storage device management in video broadcast receivers.',
+    url: 'https://patents.google.com/patent/US9282373B2'
+  },
+  { 
+    id: 'US 8,633,940', 
+    type: 'Granted', 
+    title: 'Texture Compression for AVC & 3D Engines', 
+    impact: 'Optimized 3D rendering and texture compression within AVC decoders.',
+    url: 'https://patents.google.com/patent/US8633940B2'
+  },
+  { 
+    id: 'US 7,289,823', 
+    type: 'Granted', 
+    title: 'Video Overlay Buffer Mirroring', 
+    impact: 'Shared mailbox architecture for dual-processor video synchronization in mobile devices.',
+    url: 'https://patents.google.com/patent/US7289823B1'
+  },
+  { 
+    id: 'US 7,107,044', 
+    type: 'Granted', 
+    title: 'Hardware UI Virtualization', 
+    impact: 'Virtualizing hardware user-interfaces via shared mailboxes between processors.',
+    url: 'https://patents.google.com/patent/US7107044B1/'
+  },
+  { 
+    id: 'US 6,987,961', 
+    type: 'Granted', 
+    title: 'Ethernet Emulation via Shared Mailbox', 
+    impact: 'High-speed data emulation between dual processors in feature phone architectures.',
+    url: 'https://patents.google.com/patent/US6987961B1/'
+  },
+  { 
+    id: 'US 2007/0189732', 
+    type: 'Published', 
+    title: 'MPEG-2 Start Code Reconstruction', 
+    impact: 'Innovative method for reconstructing legacy transport stream start codes from AVC data.',
+    url: 'https://patents.google.com/patent/US20070189732A1/'
+  },
+  { 
+    id: 'US 18/790,443', 
+    type: 'Pending', 
+    title: 'Audiovisual content watching detection and feedback using a wireless set top box', 
+    impact: 'Ad analytics using AV processing, text processing, wi-fi, ML algorithms in a wireless STB and a wireless broadband router. (Filed: Jul 31, 2024)',
+    url: 'about:blank'
+  }
 ];
 
 export const PROJECTS = [
   {
-    id: 'gt1',
-    title: 'nRF9160 Geographic Tracking',
-    category: 'IoT',
-    description: 'Ultra-low power geographic tracking system developed using Nordic nRF9160 DK and Zephyr SDK.',
-    technicalDetails: ['Zephyr RTOS', 'LTE-M / NB-IoT', 'GPS/GNSS Power Optimization'],
-    status: 'Completed',
-    imageUrl: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'br1',
-    title: 'Wi-Fi Analytics Library & SaaS',
+    id: 'wifi7',
+    title: 'Wi-Fi 7 Enterprise Router',
     category: 'Router',
-    description: 'Enterprise-grade analytics system for 802.11ax/Wi-Fi 6 routers at Broadcom scale.',
-    technicalDetails: ['C-System Library', 'JSON/MQTT Telemetry', '802.11ax Specs'],
+    description: 'Developed high-performance firmware for Broadcom-based Wi-Fi 7 (802.11be) reference designs.',
+    technicalDetails: ['Multi-Link Operation (MLO)', '6GHz Spectrum Management', 'Low-latency Packet Steering'],
     status: 'Completed',
     imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800'
   },
   {
-    id: 'stb1',
-    title: 'DVB-S2 Dual-Tuner Receiver',
+    id: 'atv1',
+    title: 'Android TV Hybrid Middleware',
+    category: 'AndroidTV',
+    description: 'Designed a hybrid DVB/OTT middleware layer for global Android TV deployments.',
+    technicalDetails: ['HAL/HIDL implementation', 'MediaCAS Integration', 'TIF (TV Input Framework)'],
+    status: 'Completed',
+    imageUrl: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'stb_4k',
+    title: '4K Ultra HD STB SoC',
     category: 'STB',
-    description: 'Production firmware for dual-tuner satellite receivers with permanent recording logic.',
-    technicalDetails: ['MPEG-TS Demux', 'PVR Storage Engine', 'Kernel Driver Dev'],
+    description: 'Lead software architect for a flagship 4K Set Top Box SoC with dual DVB-S2X tuners.',
+    technicalDetails: ['Secure Boot/TEE', 'HEVC/AV1 Decoding', 'High-bandwidth memory tuning'],
     status: 'Completed',
     imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'iot_tracker',
+    title: 'nRF9160 Asset Tracking',
+    category: 'IoT',
+    description: 'Developed a ultra-low-power cellular IoT tracker using Zephyr RTOS.',
+    technicalDetails: ['LTE-M/NB-IoT', 'PSM/eDRX Optimization', 'Cloud-to-Silicon Security'],
+    status: 'Completed',
+    imageUrl: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
 export const FUTURE_INITIATIVES = [
   {
-    title: 'RISC-V Secure Gateway',
-    description: 'Developing a trusted execution environment for next-gen IoT gateways on open-source ISA.',
-    tech: 'RISC-V, OpenSBI, Rust',
+    title: 'RISC-V Security TEE',
+    description: 'Building an open-source Trusted Execution Environment for RISC-V IoT Gateways.',
+    tech: 'Keystone Enclave, OpenSBI',
     date: 'Q1 2025'
   },
   {
-    title: 'Intelligent Wi-Fi 7 QoS',
-    description: 'Exploration of machine learning for real-time interference mitigation in 6GHz bands.',
-    tech: 'Wi-Fi 7, Edge AI, NPU HAL',
+    title: 'AI Edge Router Analytics',
+    description: 'Integrating ML models for real-time anomaly detection in high-density Wi-Fi networks.',
+    tech: 'TensorFlow Lite Micro, Wi-Fi 7',
     date: 'Q2 2025'
   },
   {
-    title: 'Smart Home Hub v2.0',
-    description: 'A matter-compliant smart home hub with integrated voice and sensor fusion.',
-    tech: 'Matter Protocol, Thread, ESP32-H2',
+    title: 'Sustainable Smart Home Hub',
+    description: 'Energy-harvesting IoT hub using Matter over Thread protocol.',
+    tech: 'Matter, Thread, ESP32-H2',
     date: 'Q3 2025'
   }
 ];
@@ -85,7 +139,7 @@ export const EDUCATION = [
     institution: 'Savitribai Phule Pune University',
     degree: 'Bachelor of Computer Engineering',
     years: '1995 - 1999',
-    description: 'Core foundation in computer architecture and systems.'
+    description: 'Foundation in computer architecture and systems.'
   }
 ];
 

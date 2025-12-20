@@ -11,6 +11,11 @@ export default defineComponent({
             <div class="w-8 h-8 bg-cyan-500 rounded flex items-center justify-center font-bold text-slate-950">ES</div>
             <span class="text-xl font-bold font-mono tracking-tighter">embeddedsystems<span class="text-cyan-400">.ai</span></span>
           </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#expertise" class="text-slate-400 hover:text-cyan-400 text-sm font-bold font-mono tracking-wider transition-colors uppercase">Expertise</a>
+            <a href="#projects" class="text-slate-400 hover:text-cyan-400 text-sm font-bold font-mono tracking-wider transition-colors uppercase">Portfolio</a>
+            <a href="#roadmap" class="text-slate-400 hover:text-cyan-400 text-sm font-bold font-mono tracking-wider transition-colors uppercase">Roadmap</a>
+          </div>
         </div>
       </div>
     </nav>
