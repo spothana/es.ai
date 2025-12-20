@@ -56,8 +56,8 @@ export const PATENTS = [
   { 
     id: 'US 18/790,443', 
     type: 'Pending', 
-    title: 'Audiovisual content watching detection and feedback using a wireless set top box', 
-    impact: 'Ad analytics using AV processing, text processing, wi-fi, ML algorithms in a wireless STB and a wireless broadband router. (Filed: Jul 31, 2024)',
+    title: 'Audiovisual Content Watching Detection and Feedback', 
+    impact: 'Ad analytics using AV processing, text processing, Wi-Fi, and ML algorithms in a wireless STB and broadband router.',
     url: 'about:blank'
   }
 ];
