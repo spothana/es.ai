@@ -56,8 +56,8 @@ export const PATENTS = [
   { 
     id: 'US 18/790,443', 
     type: 'Pending', 
-    title: 'Audiovisual Content Watching Detection and Feedback', 
-    impact: 'Ad analytics using AV processing, text processing, Wi-Fi, and ML algorithms in a wireless STB and broadband router.',
+    title: 'Audiovisual content watching detection and feedback using a wireless set top box', 
+    impact: 'Ad analytics using AV processing, text processing, wi-fi, ML algorithms in a wireless STB and a wireless broadband router. (Filed: Jul 31, 2024)',
     url: 'about:blank'
   }
 ];
@@ -101,24 +101,95 @@ export const PROJECTS = [
   }
 ];
 
+export const GA_TECH_RESEARCH = [
+  {
+    id: 'wifi_class',
+    title: 'Wi-Fi Interface Device Classification',
+    subtitle: 'Georgia Institute of Technology - MS in Analytics',
+    description: 'A machine learning approach to identifying IoT devices through encrypted traffic patterns.',
+    slides: [
+      {
+        title: "Introduction & Motivation",
+        content: "Explosive growth of IoT devices creates a visibility gap for ISPs. With 90%+ traffic encrypted (WPA3/TLS), traditional Deep Packet Inspection is ineffective. Operators need device identity for automated security patches, QoS prioritization, and bandwidth management."
+      },
+      {
+        title: "Problem Statement",
+        content: "Passive classification of heterogeneous devices (Smart Home, Mobile, PC) using only unencrypted packet metadata. Goal: Maintain user privacy while achieving high granular classification accuracy."
+      },
+      {
+        title: "Methodology: Data Acquisition",
+        content: "Passive traffic collection on Broadcom BCM4908 Wi-Fi 6 Gateway. Dataset covers 50GB of raw traffic across 45 device types. Labels generated via MAC-OUI and DHCP fingerprinting as ground truth."
+      },
+      {
+        title: "Feature Engineering",
+        content: "Extracted 142 features from packet headers: Inter-Arrival Times (IAT) variance, Packet Size entropy, TCP Window scaling, burst frequency, and protocol ratios (DNS/NTP/HTTPS)."
+      },
+      {
+        title: "Machine Learning Pipeline",
+        content: "Pipeline implemented in Python (Scikit-Learn/Spark): Pre-processing -> SMOTE for class balancing -> Recursive Feature Elimination (RFE) -> Multi-class Classifier training."
+      },
+      {
+        title: "Model Selection & Results",
+        content: "Evaluated Random Forest, XGBoost, and KNN. Random Forest achieved the best balance of accuracy and inference speed. Results: 94.2% Overall Accuracy; 97% Precision for high-risk IoT (Cameras/Smart Locks)."
+      },
+      {
+        title: "Edge Implementation",
+        content: "Optimized model for deployment on ARM Cortex-A53 gateway cores. Quantized feature vectors reduced RAM footprint to <500KB. Real-time inference latency measured at <12ms per classification event."
+      },
+      {
+        title: "Conclusion & Future Work",
+        content: "Successful proof-of-concept for metadata-only fingerprinting. Future work includes Reinforcement Learning for adaptive security policies based on classified device behavior."
+      }
+    ]
+  },
+  {
+    id: 'deep_racer',
+    title: 'Reinforcement Learning for Edge AI',
+    subtitle: 'AWS DeepRacer Implementation',
+    description: 'Optimizing Deep Reinforcement Learning (DRL) models for low-latency decision making on edge hardware.',
+    slides: [
+      {
+        title: "Project Overview",
+        content: "Developing autonomous racing agents using AWS DeepRacer ecosystem. Focus on migration from high-compute simulation to resource-constrained physical hardware."
+      },
+      {
+        title: "RL Algorithm: PPO",
+        content: "Utilized Proximal Policy Optimization (PPO) for stable model convergence. Tuned hyperparameters: discount factor, learning rate, and entropy coefficient."
+      },
+      {
+        title: "Edge Deployment",
+        content: "Quantized TensorFlow models to 8-bit integers for the Intel OpenVINO toolkit. Achieved 30FPS inference on the physical car's onboard CPU/TPU."
+      }
+    ]
+  }
+];
+
 export const FUTURE_INITIATIVES = [
   {
-    title: 'RISC-V Security TEE',
-    description: 'Building an open-source Trusted Execution Environment for RISC-V IoT Gateways.',
-    tech: 'Keystone Enclave, OpenSBI',
-    date: 'Q1 2025'
+    title: 'Reinforcement Learning: The Living Control Plane',
+    date: '2026 Vision',
+    description: 'The era of static, rule-based control loops is ending. From DOCSIS cable plants to hyper-scale cloud data centers, the complexity has outpaced human-coded heuristics. We are transforming infrastructure into a "Living Control Plane" that senses, learns, and optimizes in real-time.',
+    tech: 'RL, MDP, MARL, Broadband, Cloud',
+    framework: [
+      { title: '1. Problem Modelling', content: 'Formalize hardware/services as (PO/S)MDPs with actionable control knobs and specific reward functions.' },
+      { title: '2. Learning Architecture', content: 'Centralised-Training-Decentralised-Execution (CTDE) models for coordinated agent structure.' },
+      { title: '3. Data-Driven Pipeline', content: 'High-fidelity Digital Twins for offline RL training and regulatory action masking.' },
+      { title: '4. Deployment & Ops', content: 'Quantized low-latency inference on MCUs/ASICs with automated roll-back triggers.' }
+    ],
+    status: 'WIP: Documenting canonical state-space definitions for XGS-PON and Gen-AI Inference Engines.'
   },
   {
-    title: 'AI Edge Router Analytics',
-    description: 'Integrating ML models for real-time anomaly detection in high-density Wi-Fi networks.',
-    tech: 'TensorFlow Lite Micro, Wi-Fi 7',
-    date: 'Q2 2025'
-  },
-  {
-    title: 'Sustainable Smart Home Hub',
-    description: 'Energy-harvesting IoT hub using Matter over Thread protocol.',
-    tech: 'Matter, Thread, ESP32-H2',
-    date: 'Q3 2025'
+    title: 'Digital Security Number (DSN)',
+    date: 'Strategic Roadmap',
+    description: 'The global identity layer for the AI Era. In an age of synthetic media, the DSN acts as a Universal Verification Protocol—a digital notary for every citizen, business, and nonprofit to bridge the "Truth Gap" in AI content.',
+    tech: 'Identity, Cryptography, Blockchain, Web3',
+    pillars: [
+      { title: 'Cryptographic Identity', content: 'Unique DSN issued by global authorities to verify Proof of Personhood or Proof of Organization.' },
+      { title: 'Embedded Provenance', content: 'Immutable metadata tags providing a Digital DNA for all human or AI-assisted content.' },
+      { title: 'The Truth Ledger', content: 'Blockchain protocol recording content consumption to ensure 100% transparency and attribution.' },
+      { title: 'Automated Value Flow', content: 'Automatic credit-debit features to ensure creators are compensated fairly for AI training data.' }
+    ],
+    status: 'Seeking: Data scientists and policy advocates to shape standards for AI-driven value creation.'
   }
 ];
 
